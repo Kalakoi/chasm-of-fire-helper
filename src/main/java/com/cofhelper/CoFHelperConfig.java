@@ -4,16 +4,78 @@ import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
 
-@ConfigGroup("example")
-public interface ExampleConfig extends Config
+@ConfigGroup("cofhelper")
+public interface CoFHelperConfig extends Config
 {
-	@ConfigItem(
-		keyName = "greeting",
-		name = "Welcome Greeting",
-		description = "The message to show to the user when they login"
+	@ConfigSection(
+		name = "Default colours",
+		description = "Default replacement colour values",
+		position = 0
 	)
-	default String greeting()
+	String defaultColourSection = "defaultColourSection";
+
+	@Alpha
+	@ConfigItem(
+		keyName = "defaultColourMagic",
+		name = "Magic spells",
+		description = "Default replacement colour for requiring magic spells",
+		position = 1,
+		section = defaultColourSection
+	)
+	default Color defaultColourMagic()
 	{
-		return "Hello";
+		return Color.BLUE;
+	}
+
+	@Alpha
+	@ConfigItem(
+		keyName = "defaultColourRange",
+		name = "Heavy range",
+		description = "Default replacement colour for requiring heavy ranged",
+		position = 2,
+		section = defaultColourSection
+	)
+	default Color defaultColourRange()
+	{
+		return Color.GREEN;
+	}
+
+	@Alpha
+	@ConfigItem(
+		keyName = "defaultColourMelee",
+		name = "Melee",
+		description = "Default replacement colour for requiring two-handed melee",
+		position = 3,
+		section = defaultColourSection
+	)
+	default Color defaultColourMelee()
+	{
+		return Color.RED;
+	}
+
+	@Alpha
+	@ConfigItem(
+		keyName = "defaultColourSpecial",
+		name = "Special attacks",
+		description = "Default replacement colour for requiring special attacks",
+		position = 4,
+		section = defaultColourSection
+	)
+	default Color defaultColourSpecial()
+	{
+		return Color.YELLOW;
+	}
+
+	@Alpha
+	@ConfigItem(
+		keyName = "defaultColourBind",
+		name = "Binding spells",
+		description = "Default replacement colour for requiring binding spells",
+		position = 5,
+		section = defaultColourSection
+	)
+	default Color defaultColourBind()
+	{
+		return Color.WHITE;
 	}
 }

@@ -1,8 +1,11 @@
-package com.example;
+package com.cofhelper;
 
+import java.awt.Color;
+import net.runelite.client.config.Alpha;
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
+import net.runelite.client.config.ConfigSection;
 
 @ConfigGroup("cofhelper")
 public interface CoFHelperConfig extends Config

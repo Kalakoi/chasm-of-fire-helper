@@ -46,7 +46,7 @@ public interface CoFHelperConfig extends Config
 	@Alpha
 	@ConfigItem(
 		keyName = "defaultColourMelee",
-		name = "Melee",
+		name = "2H melee",
 		description = "Default replacement colour for requiring two-handed melee",
 		position = 3,
 		section = defaultColourSection
